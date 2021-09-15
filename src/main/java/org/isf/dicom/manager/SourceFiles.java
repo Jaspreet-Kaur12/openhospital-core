@@ -254,17 +254,17 @@ public class SourceFiles extends Thread {
 			BufferedImage originalImage;
 			Iterator<?> iter = null;
 			if (isJpeg) {
-				iter = ImageIO.getImageReadersByFormatName("jpeg");
-				reader = (ImageReader) new com.sun.imageio.plugins.jpeg.JPEGImageReader(null);
-				//JPEGImageReadParam jpgParam = new JPEGImageReadParam();
-
-				ImageInputStream imageInputStream = ImageIO.createImageInputStream(sourceFile);
-
-				reader.setInput(imageInputStream, false);
-
-				originalImage = null;
-
+				ImageInputStream imageInputStream = null;
+				
 				try {
+					iter = ImageIO.getImageReadersByFormatName("jpeg");
+					reader = (ImageReader) new com.sun.imageio.plugins.jpeg.JPEGImageReader(null);
+					//JPEGImageReadParam jpgParam = new JPEGImageReadParam();
+	
+					imageInputStream = ImageIO.createImageInputStream(sourceFile);
+	
+					reader.setInput(imageInputStream, false);
+	
 					originalImage = reader.read(0); //, jpgParam);
 
 					int orientation = checkOrientation(sourceFile);
@@ -285,27 +285,38 @@ public class SourceFiles extends Thread {
 					throw new OHDicomException(new OHExceptionMessage(MessageBundle.getMessage("angal.common.error.title"),
 							MessageBundle.formatMessage("angal.dicom.thefileisinanunknownformat.fmt.msg", sourceFile.getName()),
 							OHSeverityLevel.ERROR));
+				} catch (Exception e) {
+					throw new OHDicomException(new OHExceptionMessage(MessageBundle.getMessage("angal.common.error.title"),
+									MessageBundle.getMessage("angal.dicom.thefileisinanunknownformat.fmt.msg"),
+									OHSeverityLevel.ERROR));
 				}
-
 				imageInputStream.close();
+				
 			} else if (isDicom) {
-				iter = ImageIO.getImageReadersByFormatName("DICOM");
-				reader = (ImageReader) iter.next();
-
-				param = (DicomImageReadParam) reader.getDefaultReadParam();
-
-				ImageInputStream imageInputStream = ImageIO.createImageInputStream(sourceFile);
-
-				reader.setInput(imageInputStream, false);
-
-				originalImage = null;
-
+				ImageInputStream imageInputStream = null;
+				
 				try {
+					
+					iter = ImageIO.getImageReadersByFormatName("DICOM");
+					
+					reader = (ImageReader) iter.next();
+	
+					param = (DicomImageReadParam) reader.getDefaultReadParam();
+	
+					imageInputStream = ImageIO.createImageInputStream(sourceFile);
+	
+					reader.setInput(imageInputStream, false);
+	
 					originalImage = reader.read(0, param);
+
 				} catch (DicomCodingException | ConfigurationError dce) {
 					throw new OHDicomException(new OHExceptionMessage(MessageBundle.getMessage("angal.common.error.title"),
 							MessageBundle.formatMessage("angal.dicom.thefileisnotindicomformat.fmt.msg", sourceFile.getName()),
 							OHSeverityLevel.ERROR));
+				} catch (Exception e) {
+					throw new OHDicomException(new OHExceptionMessage(MessageBundle.getMessage("angal.common.error.title"),
+									MessageBundle.getMessage("angal.dicom.thefileisinanunknownformat.fmt.msg"),
+									OHSeverityLevel.ERROR));
 				}
 				imageInputStream.close();
 			} else {
