@@ -183,7 +183,7 @@
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
-			<version>6.17.0</version>
+			<version>6.20.1</version>
 			<exclusions>
 				<exclusion>
 					<groupId>com.lowagie</groupId>
@@ -475,7 +475,7 @@
 		</repository>
 		<repository>
 			<id>JFrog</id>
-			<name>Atlassian JFrog></name>
+			<name>Atlassian JFrog&gt;</name>
 			<url>https://packages.atlassian.com/maven-3rdparty-legacy-local</url>
 			<snapshots>
 				<enabled>false</enabled>
