@@ -19,7 +19,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.framework.version>4.3.28.RELEASE</spring.framework.version>
 		<license.maven.plugin.version>4.1</license.maven.plugin.version>
-		<spring-cloud-starter-openfeign>1.4.7.RELEASE</spring-cloud-starter-openfeign>
+		<spring-cloud-starter-openfeign>4.0.4</spring-cloud-starter-openfeign>
 	</properties>
 
 	<build>
@@ -194,7 +194,7 @@
 		<dependency>
 			<groupId>com.lowagie</groupId>
 			<artifactId>itext</artifactId>
-			<version>2.1.7</version>
+			<version>4.2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>joda-time</groupId>
@@ -297,7 +297,7 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.7.31</version>
+			<version>1.7.34</version>
 		</dependency>
 		<dependency>
 			<groupId>org.igniterealtime.smack</groupId>
@@ -312,7 +312,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>4.2.13.Final</version>
+			<version>5.1.17.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
@@ -327,7 +327,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.2.5.Final</version>
+			<version>5.1.17.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -475,7 +475,7 @@
 		</repository>
 		<repository>
 			<id>JFrog</id>
-			<name>Atlassian JFrog></name>
+			<name>Atlassian JFrog&gt;</name>
 			<url>https://packages.atlassian.com/maven-3rdparty-legacy-local</url>
 			<snapshots>
 				<enabled>false</enabled>
