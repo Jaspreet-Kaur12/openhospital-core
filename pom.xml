@@ -19,7 +19,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.framework.version>4.3.28.RELEASE</spring.framework.version>
 		<license.maven.plugin.version>4.1</license.maven.plugin.version>
-		<spring-cloud-starter-openfeign>1.4.7.RELEASE</spring-cloud-starter-openfeign>
+		<spring-cloud-starter-openfeign>4.0.4</spring-cloud-starter-openfeign>
 	</properties>
 
 	<build>
@@ -475,7 +475,7 @@
 		</repository>
 		<repository>
 			<id>JFrog</id>
-			<name>Atlassian JFrog></name>
+			<name>Atlassian JFrog&gt;</name>
 			<url>https://packages.atlassian.com/maven-3rdparty-legacy-local</url>
 			<snapshots>
 				<enabled>false</enabled>
