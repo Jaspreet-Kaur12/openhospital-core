@@ -447,7 +447,7 @@
 		<dependency>
 			<groupId>io.github.openfeign</groupId>
 			<artifactId>feign-gson</artifactId>
-			<version>9.4.0</version>
+			<version>11.8</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -475,7 +475,7 @@
 		</repository>
 		<repository>
 			<id>JFrog</id>
-			<name>Atlassian JFrog></name>
+			<name>Atlassian JFrog&gt;</name>
 			<url>https://packages.atlassian.com/maven-3rdparty-legacy-local</url>
 			<snapshots>
 				<enabled>false</enabled>
