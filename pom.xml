@@ -282,7 +282,7 @@
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>4.1.2</version>
+			<version>5.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -475,7 +475,7 @@
 		</repository>
 		<repository>
 			<id>JFrog</id>
-			<name>Atlassian JFrog></name>
+			<name>Atlassian JFrog&gt;</name>
 			<url>https://packages.atlassian.com/maven-3rdparty-legacy-local</url>
 			<snapshots>
 				<enabled>false</enabled>
